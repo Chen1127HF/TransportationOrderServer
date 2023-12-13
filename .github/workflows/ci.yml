@@ -77,14 +77,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
-        username: "Chen1127HF"
+        username: "chen1127hf"
         password: ${{ secrets.PAT }}
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
         context: .
         push: true
-        tags: ghcr.io/Chen1127HF/tos:latest
+        tags: ghcr.io/chen1127hf/tos:latest
 
 
 
@@ -113,7 +113,7 @@ jobs:
     # The KUBECONFIG env var is automatically exported and picked up by kubectl.
 
     - id: 'deployment-mypod'
-      run: 'kubectl create secret docker-registry github-registry --docker-server="ghcr.io" --docker-username="Chen1127HF" --docker-password="${{ secrets.PAT }}" --docker-email="haofan.chen@alumnos.upm.es" -o yaml --dry-run=client | kubectl apply -f -'
+      run: 'kubectl create secret docker-registry github-registry --docker-server="ghcr.io" --docker-username="chen1127hf" --docker-password="${{ secrets.PAT }}" --docker-email="haofan.chen@alumnos.upm.es" -o yaml --dry-run=client | kubectl apply -f -'
     - run: 'kubectl apply -f deployment.yaml'
     - run: 'kubectl get deployments'
     - run: 'kubectl get pods'
