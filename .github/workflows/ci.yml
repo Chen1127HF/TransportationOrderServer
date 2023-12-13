@@ -106,7 +106,7 @@ jobs:
     - id: 'get-credentials'
       uses: 'google-github-actions/get-gke-credentials@v1'
       with:
-        cluster_name: 'apsv-23'
+        cluster_name: 'apsv'
         location: 'us-central1'
 
 
